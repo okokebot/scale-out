@@ -7,7 +7,7 @@ export const AudioSample = () => {
 
   useEffect(() => {
     async function loadWasm() {
-      await init("/wasm/wasm_audio_api_bg.wasm"); // WebAssembly の初期化
+      await init("@/../public/wasm/wasm_audio_api.js"); // WebAssembly の初期化
 
       // `new WasmAudio()` で WebAssembly のインスタンスを作成
       const audio = new WasmAudio();
