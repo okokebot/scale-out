@@ -1,0 +1,51 @@
+/* デザインとしてはナット部分 */
+.open-position {
+  width: 60px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  display: flex;
+  position: relative;
+  /* background: linear-gradient(to right, rgba(224, 208, 180, 0.1) 50%, #e0d0b4 50%); */
+  background: #e0d0b4;
+  outline: none;
+  overflow: hidden;
+  /* 円がはみ出した場合に隠す */
+  --line-height: 1px;
+  /* デフォルト値 */
+}
+
+.open-position::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--line-height);
+  background-color: #f8e8e0;
+  transform: translateY(-50%);
+}
+
+.open-position.string-1 {
+  --line-height: 1px;
+}
+
+.open-position.string-2 {
+  --line-height: 2px;
+}
+
+.open-position.string-3 {
+  --line-height: 3px;
+}
+
+.open-position.string-4 {
+  --line-height: 4px;
+}
+
+.open-position.string-5 {
+  --line-height: 5px;
+}
+
+.open-position.string-6 {
+  --line-height: 6px;
+}

@@ -1,0 +1,39 @@
+.finger-board {
+  display: flex;
+  flex-direction: column;
+  vertical-align: top;
+}
+
+.neck-direction {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 0;
+}
+
+.fret-position-end {
+  width: 60px;
+  height: 10px;
+  border: none;
+  padding: 0;
+  display: flex;
+  position: relative;
+  background: #272727;
+  cursor: pointer;
+  outline: none;
+}
+
+/* デザインとしてはナット部分 */
+.open-position-end {
+  width: 60px;
+  height: 10px;
+  border: none;
+  padding: 0;
+  display: flex;
+  position: relative;
+  /* background: linear-gradient(to right, rgba(224, 208, 180, 0.1) 50%, #e0d0b4 50%); */
+  /* background: #e0d0b4; */
+  background: #504f4d;
+  cursor: pointer;
+  outline: none;
+}

@@ -1,0 +1,5 @@
+{
+  // フォーマッターをPrettierに設定 (TODO: Prettier の install は矯正できていない)
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}

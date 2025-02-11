@@ -1,0 +1,17 @@
+.position-mark {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 10px;
+  background-color: #b1b1b1;
+  transform: translateX(-50%);
+}
+
+.position-mark.bottom {
+  bottom: 0;
+  border-radius: 15px 15px 0 0;
+}
+.position-mark.top {
+  top: 0;
+  border-radius: 0 0 15px 15px;
+}

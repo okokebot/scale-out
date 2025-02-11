@@ -1,0 +1,43 @@
+input {
+  /* 完全に非表示にするがクリックは有効 */
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+input:checked + label {
+  /* スイッチONの時のSwitchの背景色 */
+  background-color: #9dd91d;
+}
+
+input:checked + label::before {
+  /* スイッチONの時の左側余白 */
+  left: 1.2em;
+}
+
+label {
+  position: relative;
+  background-color: #e9e9ea; /* スイッチOFF時の背景色 */
+  border-radius: 0.6em; /* 角丸 */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px; /* フォントサイズ縮小 */
+  width: 2.4em;
+  height: 1.2em;
+  transition: 0.2s;
+}
+
+label::before {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  content: "";
+  width: 1em;
+  height: 1em;
+  left: 0.1em;
+  top: 50%; /* 親要素の中央に配置 */
+  transform: translateY(-50%); /* 縦方向の中央揃え */
+  transition: 0.2s ease-out;
+}

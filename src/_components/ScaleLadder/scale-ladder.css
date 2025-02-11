@@ -1,0 +1,13 @@
+.scale-ladder {
+  position: relative;
+  /* 子要素の基準を設定 */
+  width: 100%;
+  /* 必要に応じて調整 */
+  height: 100%;
+  /* 必要に応じて調整 */
+}
+
+.box {
+  position: absolute;
+  /* scale-ladder を基準に位置を設定 */
+}

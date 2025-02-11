@@ -1,0 +1,77 @@
+.fret-position {
+  width: 60px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  display: flex;
+  position: relative;
+  background: linear-gradient(to right, #3a3a3a 90%, #8c8c8c 10%);
+  outline: none;
+  overflow: hidden;
+  /* 円がはみ出した場合に隠す */
+  --line-height: 1px;
+  /* デフォルト値 */
+}
+
+.fret-position::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--line-height);
+  background-color: #f8e8e0;
+  transform: translateY(-50%);
+}
+
+.fret-position.left-handed {
+  background: linear-gradient(to left, #3a3a3a 90%, #8c8c8c 10%);
+}
+
+.fret-position.string-1 {
+  --line-height: 1px;
+}
+
+.fret-position.string-2 {
+  --line-height: 2px;
+}
+
+.fret-position.string-3 {
+  --line-height: 3px;
+}
+
+.fret-position.string-4 {
+  --line-height: 4px;
+}
+
+.fret-position.string-5 {
+  --line-height: 5px;
+}
+
+.fret-position.string-6 {
+  --line-height: 6px;
+}
+
+.fret-position.left-handed.string-1 {
+  --line-height: 1px;
+}
+
+.fret-position.left-handed.string-2 {
+  --line-height: 2px;
+}
+
+.fret-position.left-handed.string-3 {
+  --line-height: 3px;
+}
+
+.fret-position.left-handed.string-4 {
+  --line-height: 4px;
+}
+
+.fret-position.left-handed.string-5 {
+  --line-height: 5px;
+}
+
+.fret-position.left-handed.string-6 {
+  --line-height: 6px;
+}
