@@ -44,8 +44,8 @@ export class FingerBoard {
     openNote: Note,
     scale: Scale | null,
   ): NotesPerString => {
-    // all_notes_sorted は scale があり、かつ scale.isSharp が false の場合はフラットの音階を使う。それ以外はシャープの音階を使う。
-    const all_notes_sorted =
+    // allNotesSorted は scale があり、かつ scale.isSharp が false の場合はフラットの音階を使う。それ以外はシャープの音階を使う。
+    const allNotesSorted =
       scale && !scale.isSharp ? ALL_NOTES_FLAT_SORTED : ALL_NOTES_SHARP_SORTED;
     return {
       string: string,
@@ -64,15 +64,22 @@ export class FingerBoard {
           : false,
       },
       frets: Array.from({ length: numberOfFrets }, (_, i) => {
-        const index = all_notes_sorted.findIndex(
+        const index = allNotesSorted.findIndex(
           (noteConstructor: NoteConstructor) => {
             return openNote.constructor.name === noteConstructor.name;
           },
         );
         const noteConstructor =
-          all_notes_sorted[(index + i + 1) % all_notes_sorted.length];
+          allNotesSorted[(index + i + 1) % allNotesSorted.length];
+
+        // C を迎えたときにオクターブをあげるため、allNotesSorted における解放弦音の index を計算
+        const offsetFromC = allNotesSorted.findIndex(
+          (noteConstructor: NoteConstructor) => {
+            return noteConstructor.name === openNote.constructor.name;
+          },
+        );
         const note = new noteConstructor({
-          octave: Math.floor((i + 1) / 12) + openNote.octave,
+          octave: Math.floor((i + 1 + offsetFromC) / 12) + openNote.octave,
         });
         return {
           fret: i + 1,
