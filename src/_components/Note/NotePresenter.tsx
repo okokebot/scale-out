@@ -1,3 +1,4 @@
+import { getSoundGenerator } from "@/consts/soundGenerator";
 import { AccidentalType } from "@/types/notes";
 import { Note } from "../../classes/Notes";
 import "./note.css";
@@ -15,6 +16,7 @@ const getAccidentalSymbol = (accidental: AccidentalType | null) => {
 };
 
 export const NotePresenter = ({ note, isRoot }: NotePresenterProps) => {
+  const soundGenerator = getSoundGenerator();
   const letterName = note.letterName;
   const className = isRoot
     ? `note ${letterName.toLowerCase()} root`
@@ -22,7 +24,10 @@ export const NotePresenter = ({ note, isRoot }: NotePresenterProps) => {
   const accidentalClassName = isRoot ? "accidental root" : "accidental";
   const accidental = getAccidentalSymbol(note.accidental);
   return (
-    <button className={className} onClick={() => alert(note)}>
+    <button
+      className={className}
+      onClick={() => soundGenerator.playSound(note.frequency)}
+    >
       {letterName}
       {note.octave}
       {accidental && <div className={accidentalClassName}>{accidental}</div>}
