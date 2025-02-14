@@ -9,9 +9,19 @@ export class SoundGenerator {
   }
 
   static async create(): Promise<SoundGenerator> {
-    await init("/wasm/wasm_audio_api_bg.wasm");
-    const wasmAudio = new WasmAudio();
-    return new SoundGenerator(wasmAudio);
+    try {
+      const response = await fetch("/wasm/wasm_audio_api_bg.wasm");
+      if (!response.ok) {
+        throw new Error(`Failed to fetch WASM file: ${response.statusText}`);
+      }
+      const wasmArrayBuffer = await response.arrayBuffer();
+      await init(wasmArrayBuffer);
+      const wasmAudio = new WasmAudio();
+      return new SoundGenerator(wasmAudio);
+    } catch (error) {
+      console.error("Error initializing WebAssembly:", error);
+      throw error;
+    }
   }
 
   playSound(frequency: number) {
