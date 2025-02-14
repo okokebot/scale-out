@@ -10,7 +10,7 @@ export class SoundGenerator {
 
   static async create(): Promise<SoundGenerator> {
     try {
-      const response = await fetch("/wasm/wasm_audio_api_bg.wasm");
+      const response = await fetch("scale-out/wasm/wasm_audio_api_bg.wasm");
       if (!response.ok) {
         throw new Error(`Failed to fetch WASM file: ${response.statusText}`);
       }
