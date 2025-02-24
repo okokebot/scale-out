@@ -15,7 +15,7 @@ export class SoundGenerator {
         throw new Error(`Failed to fetch WASM file: ${response.statusText}`);
       }
       const wasmArrayBuffer = await response.arrayBuffer();
-      await init(wasmArrayBuffer);
+      await init({ wasmArrayBuffer });
       const wasmAudio = new WasmAudio();
       return new SoundGenerator(wasmAudio);
     } catch (error) {
