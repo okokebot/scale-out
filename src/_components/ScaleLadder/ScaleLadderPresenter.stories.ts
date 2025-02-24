@@ -12,7 +12,7 @@ const meta: Meta = {
   parameters: {
     layout: "centered",
     backgrounds: {
-      default: "dark",
+      default: "light",
       values: [
         { name: "dark", value: "#333333" },
         { name: "light", value: "#ffffff" },

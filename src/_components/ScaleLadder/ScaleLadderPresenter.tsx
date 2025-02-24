@@ -25,9 +25,9 @@ export const ScaleLadderPresenter = ({
         };
 
         return (
-          <button className="box" key={index} style={positionStyle}>
-            <NotePresenter note={note} isRoot={false} />
-          </button>
+          // <button className="box" key={index} style={positionStyle}>
+          <NotePresenter note={note} isRoot={false} />
+          // </button>
         );
       })}
     </div>
