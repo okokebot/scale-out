@@ -1,3 +1,4 @@
+import { SoundGenerator } from "@/classes/SoundGenerator";
 import { getSoundGenerator } from "@/consts/soundGenerator";
 import { AccidentalType } from "@/types/notes";
 import { useEffect, useState } from "react";
