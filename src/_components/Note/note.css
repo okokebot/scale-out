@@ -86,34 +86,52 @@
   background-color: rgb(224, 77, 190);
 } /* ピンク */
 
-/* root の場合の枠線 */
-.note.a.root {
-  border: rgba(224, 77, 77, 0.5) 15px solid;
+.note.root {
+  border-radius: 5px;
+  width: 33px;
+  height: 33px;
+  border-width: 4px;
   font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 波紋エフェクトを復活させる場合は以下も必要 */
+.note.root::before,
+.note.root::after {
+  display: block;
+}
+
+/* 四角形用の色指定 */
+.note.a.root {
+  background-color: rgb(224, 77, 77);
+  border-color: rgba(224, 77, 77, 0.5);
 }
 .note.b.root {
-  border: rgba(224, 143, 77, 0.5) 15px solid;
-  font-size: 18px;
+  background-color: rgb(224, 143, 77);
+  border-color: rgba(224, 143, 77, 0.5);
 }
 .note.c.root {
-  border: rgba(224, 212, 77, 0.5) 15px solid;
-  font-size: 18px;
+  background-color: rgb(224, 212, 77);
+  border-color: rgba(224, 212, 77, 0.5);
 }
 .note.d.root {
-  border: rgba(122, 224, 77, 0.5) 15px solid;
-  font-size: 18px;
+  background-color: rgb(122, 224, 77);
+  border-color: rgba(122, 224, 77, 0.5);
 }
 .note.e.root {
-  border: rgba(77, 190, 224, 0.5) 15px solid;
-  font-size: 18px;
+  background-color: rgb(77, 190, 224);
+  border-color: rgba(77, 190, 224, 0.5);
 }
 .note.f.root {
-  border: rgba(130, 77, 224, 0.5) 15px solid;
-  font-size: 18px;
+  background-color: rgb(130, 77, 224);
+  border-color: rgba(130, 77, 224, 0.5);
 }
 .note.g.root {
-  border: rgba(224, 77, 190, 0.5) 15px solid;
-  font-size: 18px;
+  background-color: rgb(224, 77, 190);
+  border-color: rgba(224, 77, 190, 0.5);
 }
 
 /* accidental の位置調整 */
