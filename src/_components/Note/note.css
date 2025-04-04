@@ -88,9 +88,9 @@
 
 .note.root {
   border-radius: 5px;
-  width: 33px;
-  height: 33px;
-  border-width: 4px;
+  width: 30px;
+  height: 30px;
+  border-width: 0px;
   font-size: 18px;
   display: flex;
   justify-content: center;
@@ -154,6 +154,8 @@
 
 /* root の場合の accidental の位置調整 */
 .accidental.root {
-  top: -15px;
-  right: -15px;
+  top: -5px;
+  right: -5px;
+  border: #ffffff 7px solid;
+  font-size: 13px;
 }
