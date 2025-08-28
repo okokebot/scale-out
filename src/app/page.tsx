@@ -16,10 +16,13 @@ const Select = dynamic(
 
 export default function Home() {
   const [selectedKeyOption, setSelectedKeyOption] = useState<OptionType | null>(
-    null,
+    { value: NOTE_LIST[0].id, label: NOTE_LIST[0].displayName },
   );
   const [selectedScaleOption, setSelectedScaleOption] =
-    useState<OptionType | null>(null);
+    useState<OptionType | null>({
+      value: SCALE_LIST[0].id,
+      label: SCALE_LIST[0].displayName,
+    });
   const [scale, setScale] = useState<Scale | null>(null);
   const [isLeftHanded, setIsLeftHanded] = useState(false);
 
@@ -70,12 +73,14 @@ export default function Home() {
           setSelectedOption={setSelectedKeyOption}
           placeholder="Select Root"
           className="w-40"
+          value={selectedKeyOption}
         />
         <Select
           options={scaleOptions}
           setSelectedOption={setSelectedScaleOption}
           placeholder="Select Scale"
           className="w-80"
+          value={selectedScaleOption}
         />
         <div className="flex items-center space-x-2">
           <span className="text-md text-gray-400">LeftHand-Mode</span>

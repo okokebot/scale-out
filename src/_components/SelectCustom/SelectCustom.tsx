@@ -11,6 +11,7 @@ export type SelectCustomProps = {
   setSelectedOption: (option: SingleValue<OptionType>) => void;
   placeholder?: string;
   className?: string;
+  value?: OptionType | null;
 };
 
 export const SelectCustom = ({
@@ -18,6 +19,7 @@ export const SelectCustom = ({
   setSelectedOption,
   placeholder = "Select an option",
   className,
+  value,
 }: SelectCustomProps) => {
   const handleChange = (option: SingleValue<OptionType>) => {
     setSelectedOption(option);
@@ -32,6 +34,7 @@ export const SelectCustom = ({
         placeholder={placeholder}
         isClearable
         classNamePrefix="custom-select"
+        value={value}
       />
     </div>
   );
