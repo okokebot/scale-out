@@ -151,15 +151,18 @@ export const FingerBoardPresenter = ({
 
   return (
     <div className="finger-board">
-      {neckEndView(notesOnFingerBoard.allNotes[0])}{" "}
       {/* 1弦のフレット数だけネック端を用意 */}
+      {neckEndView(notesOnFingerBoard.allNotes[0])}
+
+      {/* フレット全体 */}
       {notesOnFingerBoard.allNotes.map((notesPerString) => {
         return stringView(notesPerString);
       })}
+
+      {/* 最終弦のフレット数だけネック端を用意 */}
       {neckEndView(
         notesOnFingerBoard.allNotes[notesOnFingerBoard.allNotes.length - 1],
-      )}{" "}
-      {/* 最終弦のフレット数だけネック端を用意 */}
+      )}
     </div>
   );
 };
