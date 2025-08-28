@@ -149,6 +149,50 @@ export const FingerBoardPresenter = ({
     );
   };
 
+  // フレット番号の表示
+  // ネック端の表示
+  const fretNumberView = (notesPerString: NotesPerString) => {
+    return (
+      <>
+        {isLeftHanded
+          ? fretNumberViewLeftHanded(notesPerString)
+          : fretNumberViewRightHanded(notesPerString)}
+      </>
+    );
+  };
+
+  const fretNumberViewRightHanded = (notesPerString: NotesPerString) => {
+    return (
+      <div className="neck-direction">
+        <div className="open-position-number"></div>
+        {/* 開放弦の位置に空白を追加 */}
+        {notesPerString.frets.map((fret) => {
+          return (
+            <div key={fret.fret} className="fret-number-display">
+              {fret.fret}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const fretNumberViewLeftHanded = (notesPerString: NotesPerString) => {
+    return (
+      <div className="neck-direction">
+        {notesPerString.frets
+          .slice()
+          .reverse()
+          .map((fret) => (
+            <div key={fret.fret} className="fret-number-display">
+              {fret.fret}
+            </div>
+          ))}
+        <div className="open-position-number"></div>
+      </div>
+    );
+  };
+
   return (
     <div className="finger-board">
       {/* 1弦のフレット数だけネック端を用意 */}
@@ -161,6 +205,11 @@ export const FingerBoardPresenter = ({
 
       {/* 最終弦のフレット数だけネック端を用意 */}
       {neckEndView(
+        notesOnFingerBoard.allNotes[notesOnFingerBoard.allNotes.length - 1],
+      )}
+
+      {/* フレット番号の表示をここに追加 */}
+      {fretNumberView(
         notesOnFingerBoard.allNotes[notesOnFingerBoard.allNotes.length - 1],
       )}
     </div>
