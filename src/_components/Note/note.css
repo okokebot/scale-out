@@ -6,7 +6,7 @@
   width: 30px;
   height: 30px;
   color: white;
-  border: #f8e8e0 3px solid;
+  box-shadow: 5px 3px 3px black;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -34,7 +34,7 @@
 }
 
 .note:hover::before {
-  transform: translate(-50%, -50%) scale(3);
+  transform: translate(-50%, -50%) scale(10);
   opacity: 1;
 }
 
